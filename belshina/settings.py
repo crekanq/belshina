@@ -27,6 +27,7 @@ INSTALLED_APPS = [
 
     # Custom apps
     'users.apps.UsersConfig',
+    'chats.apps.ChatsConfig',
 ]
 
 MIDDLEWARE = [
