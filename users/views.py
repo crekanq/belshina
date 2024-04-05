@@ -2,6 +2,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from django.views import View
 
+from chats.models import Chat
 from .forms import LoginForm, RegisterForm
 
 
@@ -41,6 +42,8 @@ class UserRegisterView(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             user = form.save()
+            common_chat, created = Chat.objects.get_or_create()
+            common_chat.users.add(user)
             login(request, user)
             return redirect('login')  # Redirect после регистрации
         return render(request, self.template_name, {'form': form})

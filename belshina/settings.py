@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Custom modul
+    'channels',
 
     # Custom apps
     'users.apps.UsersConfig',
