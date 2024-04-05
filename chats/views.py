@@ -71,3 +71,4 @@ class ChatView(UserPassesTestMixin, View):
         chat = Chat.objects.get(id=chat_id)
         chat.hidden = not chat.hidden
         chat.save()
+
